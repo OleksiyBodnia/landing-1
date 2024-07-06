@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/landing-1/assets/favicon-6e31a362.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tinvio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+    />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/i18next@latest/i18next.min.js"></script>
+    <script type="module" crossorigin src="/landing-1/commonHelpers.js"></script>
+    <link rel="stylesheet" href="/landing-1/assets/index-3e172bbf.css">
+  </head>
+  <body>
+    <header class="header-sec">
+  <div class="container header-div">
+
+    <div style="display: flex; gap: 24px; position: relative;">
+      <img src="../img/header/logo@2x.png" alt="logotype" class="head-logo" />
+      <select class="language-selector" onchange="changeLanguage(value)">
+        <option value="en" selected>EN</option>
+        <option value="uk">UK</option>
+      </select>
+    </div>
+      <svg class="burger">
+        <use href="../icons/s.svg#icon-menu"></use>
+      </svg>
+
+
+      <nav class="header-nav-desk">
+        <ul class="list nav-header-list-desk">
+          <li class="nav-header-item-desk"><a href="" class="nav-header-link-desk" id="nav-home-header" style="color: var(--Text-Primary);"></a></li>
+          <li class="nav-header-item-desk"><a href="../pages/features.html" class="nav-header-link-desk" id="nav-features-header"></a></li>
+          <li class="nav-header-item-desk"><a href="../pages/company.html" class="nav-header-link-desk" id="nav-company-header"></a></li>
+        </ul>
+      </nav>
+
+      <button class="header-desk-gs-btn" id="get-started" onclick="scrollToSection()"></button>
+  </div>
+</header>
+<div class="mobile-menu">
+  <div class="header-top">
+    <img src="../img/header/logo@2x.png" alt="logotype" class="head-logo" />
+    <svg class="close">
+      <use href="../icons/s.svg#icon-close"></use>
+    </svg>
+  </div>
+  <nav>
+    <ul class="list navigation-menu">
+      <li class="link"><a href="" id="nav-home-header" class="nav-link" style="color: var(--Text-Primary);"></a></li>
+      <li class="link"><a href="../pages/features.html" id="nav-features-header" class="nav-link"></a></li>
+      <li class="link"><a href="../pages/company.html" id="nav-company-header" class="nav-link"></a></li>
+    </ul>
+  </nav>
+  <div class="header-tablet-part">
+    <button class="header-tablet-btn" id="get-started" onclick="scrollToSection()"></button>
+    <div class="social-net-tablet-list">
+      <img src="../img/header/social1@2x.png" alt="social icon" class="social-tablet-icon-header">
+      <img src="../img/header/social2@2x.png" alt="social icon" class="social-tablet-icon-header">
+    </div>
+  </div>
+</div>
+
+<script defer>
+  const burger = document.querySelector(".burger");
+  const mobileMenu = document.querySelector(".mobile-menu");
+  const close = document.querySelector(".close")
+  const headerTabletBtn = document.querySelector(".header-tablet-btn");
+
+  headerTabletBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("closed")
+  });
+
+  burger.addEventListener("click", () => {
+    mobileMenu.classList.toggle("closed")
+  });
+  close.addEventListener('click', () => {
+    mobileMenu.classList.toggle("closed")
+  })
+  function scrollToSection() {
+    const targetSection = document.querySelector('.form-home-section');
+    targetSection.scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
+<style>
+  .language-selector {
+    position: relative;
+    top: 3px;
+    border: none;
+    outline: none;
+    color: var(--Text-Main, #212121);
+    text-align: right;
+    font-family: Gilroy;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26.646px; /* 166.537% */
+  }
+  .language-selector > option{
+    color: var(--Text-Main, #212121);
+    text-align: right;
+    font-family: Gilroy;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26.646px; /* 166.537% */
+    border: none;
+    outline: none;
+  }
+</style>
+    <main>
+
+      <section class="hero-home-section">
+  <div class="container hero-home-div">
+    <h2 class="hero-home-div-title" id="hero-home-div-title"></h2>
+    <p class="hero-home-div-text" id="hero-home-div-text"></p>
+    <button class="hero-home-div-btn" id="hero-home-div-btn" onclick="scrollToSection()"></button>
+    <div class="sml-txt">
+      <p class="hero-home-div-sml-text" id="hero-home-div-sml-text"></p>
+      <img src="../img/hero-home/smile.png" alt="smile" class="sml-smile">
+    </div>
+  </div>
+</section>
+
+      <section class="how-it-works">
+  <div class="container hiw-div">
+    <div class="desk-hiw-div">
+      <h2 class="hiw-title" id="hiw-title"></h2>
+      <p class="hiw-text" id="hiw-text"></p>
+      <div class="hiw-play-btn">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="11"
+          height="13"
+          viewBox="0 0 11 13"
+          fill="none"
+        >
+          <path
+            d="M2.06274 0.764102C1.06217 0.143528 0.250977 0.65191 0.250977 1.8987V11.0994C0.250977 12.3475 1.06217 12.8552 2.06274 12.2352L9.5003 7.62322C10.5012 7.00243 10.5012 5.99665 9.5003 5.376L2.06274 0.764102Z"
+            fill="#212121"
+          />
+        </svg>
+        <p class="paly-btn-text">Play Video</p>
+      </div>
+    </div>
+    <picture class="img-hiw-picture">
+      <source
+        srcset="../img/how-it-works-home/desk-large@2x.png"
+        media="(min-width: 1440px)"
+      />
+      <source
+        srcset="../img/how-it-works-home/desk@2x.png"
+        media="(min-width: 1024px)"
+      />
+      <source
+        srcset="../img/how-it-works-home/img-tablet@2x.png"
+        media="(min-width: 768px)"
+      />
+      <source
+        srcset="../img/how-it-works-home/img@2x.png"
+        media="(min-width: 375px)"
+      />
+      <img src="../img/how-it-works-home/img@2x.png" alt="Responsive Image" />
+    </picture>
+  </div>
+</section>
+
+      <section class="smarter">
+  <div class="container smarter-div">
+    <div class="frst-smrt-div">
+      <h2 class="frst-smrt-div-title" id="smarter-title"></h2>
+      <div class="smrt-btn-div">
+        <button class="smrt-btn-one" id="smarter-btn-1"></button>
+        <button class="smrt-btn-two" id="smarter-btn-2"></button>
+        <button class="smrt-btn-three" id="smarter-btn-3"></button>
+      </div>
+      <div class="change-div-one">
+        <ul class="change-list">
+          <li class="change-item">
+            <img src="../img/smarter/rectangle.png" alt="item" />
+            <p class="change-item-text" id="change-div-one-line-1"></p>
+          </li>
+          <li class="change-item">
+            <img src="../img/smarter/rectangle.png" alt="item" />
+            <p class="change-item-text" id="change-div-one-line-2"></p>
+          </li>
+          <li class="change-item">
+            <img src="../img/smarter/rectangle.png" alt="item" />
+            <p class="change-item-text" id="change-div-one-line-3"></p>
+          </li>
+        </ul>
+      </div>
+      <div class="change-div-two">
+        <ul class="change-list">
+          <li class="change-item">
+            <img src="../img/smarter/rectangle.png" alt="item" />
+            <p class="change-item-text" id="change-div-two-line-1"></p>
+          </li>
+          <li class="change-item">
+            <img src="../img/smarter/rectangle.png" alt="item" />
+            <p class="change-item-text" id="change-div-two-line-2"></p>
+          </li>
+          <li class="change-item">
+            <img src="../img/smarter/rectangle.png" alt="item" />
+            <p class="change-item-text" id="change-div-two-line-3"></p>
+          </li>
+        </ul>
+      </div>
+      <div class="change-div-three">
+        <ul class="change-list">
+          <li class="change-item">
+            <img src="../img/smarter/rectangle.png" alt="item" />
+            <p class="change-item-text" id="change-div-three-line-1"></p>
+          </li>
+          <li class="change-item">
+            <img src="../img/smarter/rectangle.png" alt="item" />
+            <p class="change-item-text" id="change-div-three-line-2"></p>
+          </li>
+          <li class="change-item">
+            <img src="../img/smarter/rectangle.png" alt="item" />
+            <p class="change-item-text" id="change-div-three-line-3"></p>
+          </li>
+        </ul>
+      </div>
+      <a href="../features.html" class="more-features" id="more-feateres"></a>
+    </div>
+    <div class="scnd-smrt-div">
+      <!-- <picture >
+
+        <source
+          srcset="../img/smarter/displays@2x.png"
+          media="(min-width: 375px)"
+        />
+        <img src="../img/smarter/displays@2x.png" alt="Responsive Image" class="smrter-bottom-img"/>
+      </picture> -->
+    </div>
+  </div>
+</section>
+
+<script>
+  const btn1 = document.querySelector('.smrt-btn-one');
+  const btn2 = document.querySelector('.smrt-btn-two');
+  const btn3 = document.querySelector('.smrt-btn-three');
+
+  const changedivone = document.querySelector('.change-div-one');
+  const changedivtwo = document.querySelector('.change-div-two');
+  const changedivthree = document.querySelector('.change-div-three');
+
+  btn2.addEventListener('click', () => {
+    changedivone.style.display ="none";
+    changedivthree.style.display ="none";
+    changedivtwo.style.display ="flex";
+    btn1.style.border = "none";
+    btn3.style.border = "none";
+    btn2.style.border = "2px solid black"
+  })
+  btn3.addEventListener('click', () => {
+    changedivone.style.display ="none";
+    changedivthree.style.display ="flex";
+    changedivtwo.style.display ="none";
+    btn1.style.border = "none";
+    btn3.style.border = "2px solid black";
+    btn2.style.border = "none"
+  })
+  btn1.addEventListener('click', () => {
+    changedivone.style.display ="flex";
+    changedivthree.style.display ="none";
+    changedivtwo.style.display ="none";
+    btn1.style.border = "2px solid black";
+    btn3.style.border = "none";
+    btn2.style.border = "none"
+  })
+</script>
+
+      <section class="featured-home-section">
+  <div class="container feat-home-div">
+    <h2 class="feat-home-title" id="feat-home-title"></h2>
+    <div class="feat-home-img-list">
+      <img src="../img/featured-home/img1.png" alt="company logo" class="feat-home-img" />
+      <img src="../img/featured-home/img2.png" alt="company logo" class="feat-home-img" />
+      <img src="../img/featured-home/img3.png" alt="company logo" class="feat-home-img" />
+      <img src="../img/featured-home/img4.png" alt="company logo" class="feat-home-img" />
+    </div>
+  </div>
+</section>
+
+      <section class="swiper-home-section">
+  <div class="container swiper-home-div">
+    <h2 class="swiper-home-title" id="swiper-home-title"></h2>
+
+    <swiper-container class="mySwiper" init="false">
+      <swiper-slide class="slide-1"
+        ><p class="swiper-text" id="swiper-home-slide-one"></p>
+        <img
+          src="../img/swiper-home/slide1@2x.png"
+          alt="company logo"
+          class="swiper-h-img"
+      /></swiper-slide>
+      <swiper-slide class="slide-2"
+        ><p class="swiper-text" id="swiper-home-slide-two"></p>
+        <img
+          src="../img/swiper-home/slide2@2x.png"
+          alt="company logo"
+          class="swiper-h-img"
+      /></swiper-slide>
+      <swiper-slide class="slide-3"
+        ><p class="swiper-text" id="swiper-home-slide-three"></p>
+        <img
+          src="../img/swiper-home/slide3@2x.png"
+          alt="company logo"
+          class="swiper-h-img"
+      /></swiper-slide>
+      <swiper-slide class="slide-4"
+        ><p class="swiper-text" id="swiper-home-slide-four"></p>
+        <img
+          src="../img/swiper-home/slide4@2x.png"
+          alt="company logo"
+          class="swiper-h-img"
+      /></swiper-slide>
+    </swiper-container>
+
+    <div class="nav-btn-menu">
+      <div class="swiper-button-prev"><img src="../img/swiper-home/btn-left.png" alt="button"></div>
+    <div class="swiper-button-next"><img src="../img/swiper-home/btn-right.png" alt="button"></div>
+    </div>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
+<script>
+  const swiperEl = document.querySelector('swiper-container');
+
+  const params = {
+    injectStyles: [
+      `
+      .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+        opacity: 1;
+        background: #5C5C5C;
+        border-radius: 0;
+        transform: rotate(45deg); /* Rotate to make it a diamond shape */
+      }
+
+      .swiper-pagination-bullet-active {
+        background: #FFF;
+      }
+        .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
+        margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 10px);
+        }
+      .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+    bottom: var(--swiper-pagination-bottom, 0px);}
+      `,
+    ],
+    pagination: {
+      clickable: true,
+      renderBullet: function (index, className) {
+        return `<span class="${className}"> </span>`;
+      },
+
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+  };
+
+  Object.assign(swiperEl, params);
+
+  swiperEl.initialize();
+</script>
+
+      <section class="chain-home-section">
+  <div class="container chin-home-sid">
+    <h class="chain-home-title" id="chain-home"></h>
+    <picture>
+      <source srcset="../img/chain-home/img6@2x.png" media="(min-width: 1920px)" />
+      <source srcset="../img/chain-home/img5@2x.png" media="(min-width: 1440px)" />
+      <source srcset="../img/chain-home/img4@2x.png" media="(min-width: 1280px)" />
+      <source srcset="../img/chain-home/img3@2x.png" media="(min-width: 1024px)" />
+      <source srcset="../img/chain-home/img2@2x.png" media="(min-width: 768px)" />
+      <source srcset="../img/chain-home/img@2x.png" media="(min-width: 375px)" />
+      <img src="../img/chain-home/img@2x.png" alt="Responsive Image" />
+    </picture>
+  </div>
+</section>
+
+      <section class="form-home-section">
+  <div class="container form-home-div">
+    <h2 class="form-home-title" id="form-home-title"></h2>
+    <div class="form-home-form-div">
+      <form class="form-home">
+        <h3 class="form-home-form-title" id="form-home-form-title"></h3>
+        <label
+          for="name"
+          id="form-home-form-label-one"
+          class="form-lbl"
+        ></label>
+        <input
+          type="text"
+          class="form-home-input"
+          id="name"
+          placeholder="John Appleseed"
+        />
+        <label
+          for="bus-name"
+          id="form-home-form-label-two"
+          class="form-lbl"
+        ></label>
+        <input
+          type="text"
+          class="form-home-input"
+          id="bus-name"
+          placeholder="Burgers &Boba (Singapore)"
+        />
+        <label
+          for="number"
+          id="form-home-form-label-three"
+          class="form-lbl"
+        ></label>
+        <input
+          type="number"
+          class="form-home-input"
+          id="number"
+          placeholder="65 9123 4567"
+        />
+        <button type="submit" id="form-btn" class="form-btn"></button>
+        <p class="form-home-promise" id="form-home-promise"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+
+    </main>
+    <footer class="footer-home">
+  <div class="container footer-div">
+    <img src="../img/header/logo@2x.png" alt="logo" class="footer-logo-img" />
+    <nav class="footer-nav">
+      <a href="" class="footer-nav-link" id="nav-home-header" style="color: var(--Text-Primary);"></a>
+      <a href="../pages/features.html" class="footer-nav-link" id="nav-features-header"></a>
+      <a href="../pages/company.html" class="footer-nav-link" id="nav-company-header"></a>
+    </nav>
+    <div class="footer-img-div">
+      <img src="../img/header/social1@2x.png" alt="socials" class="footer-img-socail"/>
+      <img src="../img/header/social2@2x.png" alt="socials" class="footer-img-socail"/>
+    </div>
+    <a href="../policy.html" class="privacy-policy">© Tinvio™ 2020. All Rights Reserved Privacy Policy | Terms of Service</a>
+  </div>
+</footer>
+
+    <!-- <button onclick="changeLanguage('en')">English</button>
+      <button onclick="changeLanguage('uk')">Українська</button> -->
+  </body>
+  
+</html>
+
+
+
