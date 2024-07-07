@@ -1,8 +1,8 @@
 
 // Завантаження мовних файлів
 Promise.all([
-  fetch('/en.json').then(res => res.json()),
-  fetch('/uk.json').then(res => res.json())
+  fetch('./pages/en.json').then(res => res.json()),
+  fetch('./pages/uk.json').then(res => res.json())
 ]).then(([enTranslations, ukTranslations]) => {
   // Отримання збереженої мови з localStorage або встановлення за замовчуванням
   const savedLanguage = localStorage.getItem('language') || 'en';
