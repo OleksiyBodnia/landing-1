@@ -1,8 +1,19 @@
-
 // Завантаження мовних файлів
 Promise.all([
-  fetch('./pages/en.json').then(res => res.json()),
-  fetch('./pages/uk.json').then(res => res.json())
+  fetch('./pages/en.json')
+    .then(res => {
+      if (!res.ok) {
+        throw new Error(`HTTP error! Status: ${res.status}`);
+      }
+      return res.json();
+    }),
+  fetch('./pages/uk.json')
+    .then(res => {
+      if (!res.ok) {
+        throw new Error(`HTTP error! Status: ${res.status}`);
+      }
+      return res.json();
+    })
 ]).then(([enTranslations, ukTranslations]) => {
   // Отримання збереженої мови з localStorage або встановлення за замовчуванням
   const savedLanguage = localStorage.getItem('language') || 'en';
@@ -23,24 +34,6 @@ Promise.all([
       // Ініціалізація завершена, оновлюємо текстові елементи
       updateContent();
   });
+}).catch(error => {
+  console.error('Error loading language files:', error);
 });
-
-// Функція для зміни мови
-function changeLanguage(lng) {
-  i18next.changeLanguage(lng, function(err, t) {
-      // Зберігаємо обрану мову в localStorage
-      localStorage.setItem('language', lng);
-      updateContent();
-  });
-}
-
-// Функція для оновлення текстових елементів на сторінці
-function updateContent() {
-  const elements = document.querySelectorAll('[id]');
-  elements.forEach(element => {
-      const key = element.id;
-      element.innerHTML = i18next.t(key);
-  });
-}
-
-window.changeLanguage = changeLanguage;
